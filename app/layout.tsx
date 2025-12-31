@@ -15,9 +15,30 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "AI-Native Product Builder | Portfolio",
-  description: "System Architect & Interface Designer crafting intelligent digital experiences",
-    generator: 'v0.app'
+  title: "Krishna Jha | Full-Stack Developer & Creative Media Producer",
+  description: "Co-Founder & COO at BaseBrain. Specialized in building high-performance web applications and cinematic creative content.",
+  openGraph: {
+    title: "Krishna Jha | Portfolio",
+    description: "Full-Stack Developer & Creative Media Producer based in India.",
+    url: "https://krishnajha.vercel.app",
+    siteName: "Krishna Jha Portfolio",
+    images: [
+      {
+        url: "/profile.png",
+        width: 1200,
+        height: 630,
+        alt: "Krishna Jha - Full-Stack Developer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Krishna Jha | Portfolio",
+    description: "Full-Stack Developer & Creative Media Producer.",
+    images: ["/profile.png"],
+  },
 }
 
 export const viewport: Viewport = {
