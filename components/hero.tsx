@@ -4,6 +4,7 @@ import { useRef, useState } from "react"
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
 import Image from "next/image"
 import { SentientSphere } from "./sentient-sphere"
+import BlurText from "./BlurText"
 
 interface HeroProps {
   onPortfolioChange?: (type: 'tech' | 'media') => void
@@ -101,21 +102,21 @@ export function Hero({ onPortfolioChange }: HeroProps) {
               </motion.p>
 
               <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
-                <motion.span
-                  className="inline-block bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent"
-                  whileHover={{ scale: 1.05, letterSpacing: "0.05em" }}
-                  transition={{ duration: 0.3 }}
-                >
-                  KRISHNA
-                </motion.span>
+                <BlurText
+                  text="KRISHNA"
+                  delay={150}
+                  animateBy="letters"
+                  direction="top"
+                  className="inline-block bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+                />
                 <br />
-                <motion.span
-                  className="inline-block text-red-600 italic font-light"
-                  whileHover={{ scale: 1.05, letterSpacing: "0.05em" }}
-                  transition={{ duration: 0.3 }}
-                >
-                  JHA
-                </motion.span>
+                <BlurText
+                  text="JHA"
+                  delay={150}
+                  animateBy="letters"
+                  direction="bottom"
+                  className="inline-block text-red-600 italic font-light hover:scale-105 transition-transform duration-300"
+                />
               </h1>
 
               <div className="space-y-2">
