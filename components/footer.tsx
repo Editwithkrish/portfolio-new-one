@@ -27,7 +27,7 @@ export function Footer() {
     <footer className="relative">
       {/* Main CTA */}
       <motion.a
-        href="mailto:hello@example.com"
+        href="mailto:kaxxsays@gmail.com"
         data-cursor-hover
         className="relative block overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
@@ -78,14 +78,20 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex gap-8">
-            {["LinkedIn", "GitHub", "Twitter"].map((link) => (
+            {[
+              { name: "LinkedIn", url: "https://www.linkedin.com/in/krishna-kumar-jha-b18a262a4/" },
+              { name: "GitHub", url: "https://github.com/Editwithkrish" },
+              { name: "Instagram", url: "https://www.instagram.com/kisna.fr" },
+            ].map((link) => (
               <a
-                key={link}
-                href="#"
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-cursor-hover
                 className="font-mono text-xs tracking-widest text-muted-foreground hover:text-white transition-colors duration-300"
               >
-                {link}
+                {link.name}
               </a>
             ))}
           </div>

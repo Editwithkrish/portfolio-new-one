@@ -21,6 +21,7 @@ const currentRoles: ExperienceItem[] = [
             "Working closely with product & tech teams to ship fast and scale efficiently",
             "Driving growth-focused decision-making in an early-stage startup",
         ],
+        logo: "/logos/basebrain.png",
     },
     {
         title: "Social Media Lead",
@@ -31,6 +32,7 @@ const currentRoles: ExperienceItem[] = [
             "Driving engagement through technical + educational content",
             "Leading a creative team for consistent output",
         ],
+        logo: "/logos/ccc.jpg",
     },
     {
         title: "Social Media Lead",
@@ -40,6 +42,7 @@ const currentRoles: ExperienceItem[] = [
             "Building the club's online identity and startup-focused content",
             "Promoting events, initiatives, and founder stories",
         ],
+        logo: "/logos/iec.jpg",
     },
 ]
 
@@ -54,12 +57,12 @@ const technicalExperience: ExperienceItem[] = [
         ],
     },
     {
-        title: "Freelance Web Developer",
+        title: "Freelancer",
         company: "Independent",
-        period: "Jun 2025 – Sep 2025",
+        period: "Jun 2022 – Present",
         description: [
             "Built full-stack web applications for clients using Next.js, MongoDB, MERN",
-            "Focused on performance, scalability, and clean UI",
+            "Worked with over 5+ media agecy and over 100+ happy clients",
             "Delivered end-to-end solutions from design to deployment",
         ],
     },
@@ -71,6 +74,7 @@ const campusRoles: ExperienceItem[] = [
         company: "GeeksforGeeks MIT-ADT",
         period: "Aug 2024 – Jul 2025",
         description: ["Graphic design for events, socials, and promotions"],
+        logo: "/logos/gfg.png",
     },
     {
         title: "Social Media Team Member",
@@ -80,6 +84,7 @@ const campusRoles: ExperienceItem[] = [
             "Video editing & cinematography for innovation initiatives",
             "Helped promote entrepreneurship and tech culture on campus",
         ],
+        logo: "/logos/iic.png",
     },
 ]
 
@@ -93,12 +98,20 @@ function ExperienceCard({ item, index }: { item: ExperienceItem; index: number }
             className="border-t border-white/10 py-8 md:py-10"
         >
             <div className="grid md:grid-cols-12 gap-6">
-                {/* Left: Time & Logo placeholder */}
+                {/* Left: Time & Logo */}
                 <div className="md:col-span-3 space-y-4">
                     <p className="font-mono text-xs tracking-widest text-muted-foreground">{item.period}</p>
-                    {/* Logo Placeholder */}
-                    <div className="w-16 h-16 border border-white/20 rounded flex items-center justify-center bg-white/5">
-                        <span className="font-mono text-[8px] text-muted-foreground text-center px-2">LOGO</span>
+                    {/* Logo */}
+                    <div className="w-16 h-16 border border-white/20 rounded flex items-center justify-center bg-white/5 overflow-hidden group">
+                        {item.logo ? (
+                            <img
+                                src={item.logo}
+                                alt={`${item.company} logo`}
+                                className="w-full h-full object-contain p-2 filter grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
+                            />
+                        ) : (
+                            <span className="font-mono text-[8px] text-muted-foreground text-center px-2 uppercase">{item.company.substring(0, 3)}</span>
+                        )}
                     </div>
                 </div>
 

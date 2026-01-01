@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 import { useState, useRef } from "react"
-import { Send, Mail, MapPin, Linkedin, Github, Twitter, MessageSquare, Zap } from "lucide-react"
+import { Send, Mail, MapPin, Linkedin, Github, Instagram, MessageSquare, Zap } from "lucide-react"
 
 export function Contact() {
     const [formState, setFormState] = useState({
@@ -189,8 +189,8 @@ export function Contact() {
                             </div>
                             <div>
                                 <p className="font-mono text-[10px] tracking-widest text-[#2563eb] uppercase mb-1">Email Me</p>
-                                <a href="mailto:krishna@example.com" className="font-sans text-lg hover:text-[#2563eb] transition-colors">
-                                    krishna@example.com
+                                <a href="mailto:kaxxsays@gmail.com" className="font-sans text-lg hover:text-[#2563eb] transition-colors">
+                                    kaxxsays@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -212,9 +212,9 @@ export function Contact() {
                             <div>
                                 <p className="font-mono text-[10px] tracking-widest text-[#2563eb] uppercase mb-1">Social</p>
                                 <div className="flex gap-4 mt-1">
-                                    <a href="#" className="text-muted-foreground hover:text-white transition-colors" title="LinkedIn"><Linkedin className="w-5 h-5" /></a>
-                                    <a href="#" className="text-muted-foreground hover:text-white transition-colors" title="GitHub"><Github className="w-5 h-5" /></a>
-                                    <a href="#" className="text-muted-foreground hover:text-white transition-colors" title="Twitter"><Twitter className="w-5 h-5" /></a>
+                                    <a href="https://www.linkedin.com/in/krishna-kumar-jha-b18a262a4/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors" title="LinkedIn"><Linkedin className="w-5 h-5" /></a>
+                                    <a href="https://github.com/Editwithkrish" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors" title="GitHub"><Github className="w-5 h-5" /></a>
+                                    <a href="https://www.instagram.com/kisna.fr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors" title="Instagram"><Instagram className="w-5 h-5" /></a>
                                 </div>
                             </div>
                         </div>
