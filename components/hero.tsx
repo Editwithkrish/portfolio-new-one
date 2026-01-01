@@ -105,7 +105,7 @@ export function Hero({ onPortfolioChange }: HeroProps) {
                 <BlurText
                   text="KRISHNA"
                   delay={150}
-                  animateBy="letters"
+                  animateBy="words"
                   direction="top"
                   className="inline-block bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
                 />
