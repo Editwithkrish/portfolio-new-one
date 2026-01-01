@@ -36,18 +36,17 @@ const BlurText: React.FC<BlurTextProps> = ({
 
   const defaultFrom = useMemo(
     () =>
-      direction === 'top' ? { filter: 'blur(2px)', opacity: 0, y: -20 } : { filter: 'blur(2px)', opacity: 0, y: 20 },
+      direction === 'top' ? { opacity: 0, y: -20 } : { opacity: 0, y: 20 },
     [direction]
   );
 
   const defaultTo = useMemo(
     () => [
       {
-        filter: 'blur(1px)',
         opacity: 0.5,
         y: direction === 'top' ? 2 : -2
       },
-      { filter: 'blur(0px)', opacity: 1, y: 0 }
+      { opacity: 1, y: 0 }
     ],
     [direction]
   );
@@ -80,9 +79,12 @@ const BlurText: React.FC<BlurTextProps> = ({
             onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
             className="inline-block"
             style={{
-              background: "transparent",
-              color: "inherit",
+              background: "inherit",
+              WebkitBackgroundClip: "inherit",
               WebkitTextFillColor: "inherit",
+              color: "inherit",
+              display: "inline-block",
+              willChange: "filter, opacity, transform"
             }}
           >
             {segment === ' ' ? '\u00A0' : segment}

@@ -104,10 +104,10 @@ export function Hero({ onPortfolioChange }: HeroProps) {
               <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
                 <BlurText
                   text="KRISHNA"
-                  delay={150}
-                  animateBy="words"
+                  delay={100}
+                  animateBy="letters"
                   direction="top"
-                  className="inline-block bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+                  className="inline-block text-white hover:scale-105 transition-transform duration-300"
                 />
                 <br />
                 <BlurText
