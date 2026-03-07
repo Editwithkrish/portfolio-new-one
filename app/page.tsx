@@ -62,10 +62,8 @@ export default function Home() {
             <div id="projects">
               <TechnicalProjects />
             </div>
-            <FocusSection />
-            <About />
-            <Services />
             <TechMarquee />
+            <Services />
           </>
         )}
 
@@ -77,27 +75,22 @@ export default function Home() {
             <div id="projects">
               <CreativeWorks />
             </div>
-            <FocusSection />
-            <About />
             <Services />
-            <TechMarquee />
           </>
         )}
 
         {/* Show default content if no selection */}
         {portfolioType === null && (
           <>
-            <About />
             <div id="experience">
               <TechExperience />
               <MediaExperience />
             </div>
             <div id="projects">
               <TechnicalProjects />
-            </div>
-            <div id="creative-showcase">
               <CreativeWorks />
             </div>
+            <About />
             <Services />
             <TechMarquee />
           </>

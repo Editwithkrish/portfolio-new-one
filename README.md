@@ -23,10 +23,10 @@ A brutalist-themed portfolio showcasing Krishna Jha's work as a Full-Stack Devel
 
 #### Tech Portfolio View
 Includes:
-- **Current Roles**: BaseBrain COO, Social Media Lead positions
+- **Current Roles**: BuildShot COO, Social Media Lead positions
 - **Technical Experience**: SDE Intern, Freelance Web Developer
 - **Campus & Community Roles**: GeeksforGeeks, Innovation Council
-- **Focus Section**: Current priorities and products built (Finscan, Codemaxxers, BaseBrain)
+- **Focus Section**: Current priorities and products built (Finscan, Codemaxxers, BuildShot)
 - **Achievements**: Hackathon placements (VIT, COEP)
 - **Works**: Project gallery
 - **Tech Marquee**: Technology stack showcase
@@ -50,7 +50,7 @@ Includes:
 
 ### 📦 Logo Placeholders
 All company/client entries include placeholder blocks for logos that can be replaced manually:
-- BaseBrain
+- BuildShot
 - Cloud Computing Club
 - Innovation & Entrepreneurship Club
 - Alexa Hire
@@ -145,7 +145,7 @@ The portfolio uses these primary accent colors:
 ## Contact & Links
 
 - **Name**: Krishna Jha
-- **Role**: Co-Founder & COO at BaseBrain
+- **Role**: Co-Founder & COO at BuildShot
 - **Location**: Pune, Maharashtra, India
 - **Education**: B.Tech Computer Science, MIT ADT University
 

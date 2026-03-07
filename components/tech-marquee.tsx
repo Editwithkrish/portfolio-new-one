@@ -1,5 +1,4 @@
-"use client"
-
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 const techItems = [
@@ -33,13 +32,24 @@ const concepts = [
 ]
 
 function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?: "left" | "right" }) {
-  const duplicatedItems = [...items, ...items, ...items, ...items]
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  const duplicatedItems = isMobile ? [...items, ...items] : [...items, ...items, ...items, ...items]
 
   return (
     <div className="relative overflow-hidden py-4">
       <motion.div
         className={`flex gap-8 ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}
-        style={{ width: "fit-content" }}
+        style={{ width: "fit-content", animationDuration: isMobile ? "30s" : "50s" }}
       >
         {duplicatedItems.map((item, index) => (
           <span
@@ -49,14 +59,6 @@ function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?
               WebkitTextStroke: "1px rgba(255,255,255,0.3)",
               color: "transparent",
               transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "white"
-              e.currentTarget.style.WebkitTextStroke = "none"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "transparent"
-              e.currentTarget.style.WebkitTextStroke = "1px rgba(255,255,255,0.3)"
             }}
           >
             {item}

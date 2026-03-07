@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const timelineEvents = [
     {
         year: "2025",
-        title: "Co-Founded BaseBrain",
+        title: "Co-Founded BuildShot",
         role: "Co-Founder & COO",
         description: "Leading operations, execution strategy, and product coordination in an AI-powered development platform.",
         type: "startup",

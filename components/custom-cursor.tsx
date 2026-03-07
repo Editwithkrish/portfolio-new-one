@@ -7,8 +7,15 @@ export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
 
   useEffect(() => {
+    // Check if it's a touch device
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    setIsTouchDevice(isTouch)
+    
+    if (isTouch) return
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
       setIsVisible(true)
@@ -45,6 +52,8 @@ export function CustomCursor() {
       document.removeEventListener("mouseout", handleHoverEnd)
     }
   }, [])
+
+  if (isTouchDevice) return null
 
   return (
     <>

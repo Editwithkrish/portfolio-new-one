@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 
 const focusAreas = [
-    "Scaling BaseBrain as a startup operator",
+    "Scaling BuildShot as a startup operator",
     "Building high-impact tech products",
     "Creating systems that blend engineering + media + growth",
     "Working with people who move fast and think long-term",
@@ -24,7 +24,7 @@ const achievements = [
 
 const products = [
     {
-        name: "BaseBrain.dev",
+        name: "BuildShot.xyz",
         description: "AI-powered development platform",
         role: "Co-Founder & COO",
     },

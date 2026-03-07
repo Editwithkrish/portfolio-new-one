@@ -33,10 +33,7 @@ export function ProfileAbout() {
                                 Krishna Jha
                             </h3>
                             <p className="font-mono text-sm text-muted-foreground tracking-wide">
-                                Co-Founder & COO | Software Engineer
-                            </p>
-                            <p className="font-mono text-sm text-muted-foreground tracking-wide">
-                                Media & Growth Lead
+                                Co-Founder & COO @ BuildShot
                             </p>
                         </div>
 
@@ -55,20 +52,7 @@ export function ProfileAbout() {
                     {/* Right Column - Bio */}
                     <div className="space-y-6">
                         <p className="font-sans text-base md:text-lg leading-relaxed text-white/80">
-                            I'm a builder-first operator working across technology, growth, and media. Currently, I serve as
-                            <span className="text-white font-medium"> Co-Founder & COO at BaseBrain</span>, where I handle execution,
-                            operations, and product coordination while scaling systems from the ground up.
-                        </p>
-
-                        <p className="font-sans text-base md:text-lg leading-relaxed text-white/80">
-                            I work at the intersection of <span className="text-white font-medium">engineering, design, and media</span>—from
-                            developing full-stack web applications and intuitive UI/UX systems to editing high-impact video content.
-                        </p>
-
-                        <p className="font-sans text-base md:text-lg leading-relaxed text-white/80">
-                            For me, technology isn't just about writing code—it's about{" "}
-                            <span className="text-white font-medium">solving meaningful problems, shaping narratives, and creating experiences</span>{" "}
-                            people genuinely enjoy using.
+                            I am currently the <span className="text-white font-medium">Co-Founder & COO at BuildShot</span>, where I handle execution, operations, and product coordination while scaling systems from the ground up.
                         </p>
 
                         <div className="border-t border-white/10 pt-6">
@@ -76,8 +60,6 @@ export function ProfileAbout() {
                             <div className="flex flex-wrap gap-2">
                                 {[
                                     "Startup Operations",
-                                    "Full-Stack Development",
-                                    "Video Editing",
                                     "Social Media Strategy",
                                     "UI/UX Design",
                                     "Team Leadership",

@@ -5,7 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { MathUtils } from "three"
 import type { Mesh, ShaderMaterial } from "three"
 
-function Sphere() {
+function Sphere({ segments = 64 }: { segments?: number }) {
   const meshRef = useRef<Mesh>(null)
   const materialRef = useRef<ShaderMaterial>(null)
   const { pointer } = useThree()
@@ -116,7 +116,7 @@ function Sphere() {
 
   return (
     <mesh ref={meshRef}>
-      <icosahedronGeometry args={[1.8, 64]} />
+      <icosahedronGeometry args={[1.8, segments]} />
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
@@ -131,9 +131,16 @@ function Sphere() {
 
 export function SentientSphere() {
   const [mounted, setMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024 || 'ontouchstart' in window)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   if (!mounted) {
@@ -148,14 +155,15 @@ export function SentientSphere() {
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45 }}
       className="w-full my-0 h-full py-0"
-      dpr={[1, 2]}
+      dpr={isMobile ? [1, 1.5] : [1, 2]}
       gl={{
-        antialias: true,
+        antialias: !isMobile,
         alpha: true,
+        powerPreference: "high-performance",
       }}
     >
       <ambientLight intensity={0.5} />
-      <Sphere />
+      <Sphere segments={isMobile ? 32 : 64} />
     </Canvas>
   )
 }

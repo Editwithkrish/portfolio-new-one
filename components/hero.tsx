@@ -80,6 +80,7 @@ export function Hero({ onPortfolioChange }: HeroProps) {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 priority
+                sizes="(max-width: 768px) 256px, 320px"
               />
 
 
@@ -98,7 +99,7 @@ export function Hero({ onPortfolioChange }: HeroProps) {
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                Welcome
+                Currently BuildShot
               </motion.p>
 
               <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
@@ -121,28 +122,12 @@ export function Hero({ onPortfolioChange }: HeroProps) {
 
               <div className="space-y-2">
                 <motion.p
-                  className="font-sans text-lg md:text-xl text-white/80"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  Full-Stack Developer
-                </motion.p>
-                <motion.p
-                  className="font-sans text-lg md:text-xl text-white/80"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  Creative Media Producer
-                </motion.p>
-                <motion.p
                   className="font-mono text-sm text-muted-foreground tracking-wide"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.9 }}
                 >
-                  Co-Founder & COO | Startup Operator
+                  Co-Founder & COO @ BuildShot
                 </motion.p>
               </div>
             </motion.div>

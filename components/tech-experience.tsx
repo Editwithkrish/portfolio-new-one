@@ -14,7 +14,7 @@ interface ExperienceItem {
 const currentRoles: ExperienceItem[] = [
     {
         title: "Co-Founder & COO",
-        company: "BaseBrain",
+        company: "BuildShot",
         period: "Jul 2025 – Present",
         description: [
             "Leading operations, execution strategy, and internal systems",
@@ -46,14 +46,13 @@ const currentRoles: ExperienceItem[] = [
     },
 ]
 
-const technicalExperience: ExperienceItem[] = [
+const pastExperience: ExperienceItem[] = [
     {
         title: "SDE Intern",
         company: "Alexa Hire",
         period: "Sep 2025 – Oct 2025",
         description: [
             "Worked on software development tasks in a production environment",
-            "Gained hands-on experience with real-world engineering workflows",
         ],
     },
     {
@@ -62,29 +61,28 @@ const technicalExperience: ExperienceItem[] = [
         period: "Jun 2022 – Present",
         description: [
             "Built full-stack web applications for clients using Next.js, MongoDB, MERN",
-            "Worked with over 5+ media agecy and over 100+ happy clients",
             "Delivered end-to-end solutions from design to deployment",
         ],
     },
+    {
+        title: "Social Media Lead",
+        company: "Innovation & Entrepreneurship Club, MIT ADT",
+        period: "Aug 2024 – Present",
+        description: [
+            "Managing content strategy and building the club's online identity",
+        ],
+        logo: "/logos/iec.jpg",
+    },
 ]
 
-const campusRoles: ExperienceItem[] = [
+const achievements = [
     {
-        title: "Design Team Member",
-        company: "GeeksforGeeks MIT-ADT",
-        period: "Aug 2024 – Jul 2025",
-        description: ["Graphic design for events, socials, and promotions"],
-        logo: "/logos/gfg.png",
+        title: "2nd Place",
+        event: "VIT Software Hackathon",
     },
     {
-        title: "Social Media Team Member",
-        company: "Institution's Innovation Council, MIT ADT",
-        period: "Aug 2024 – Jul 2025",
-        description: [
-            "Video editing & cinematography for innovation initiatives",
-            "Helped promote entrepreneurship and tech culture on campus",
-        ],
-        logo: "/logos/iic.png",
+        title: "3rd Place",
+        event: "COEP Game Development Hackathon",
     },
 ]
 
@@ -95,41 +93,29 @@ function ExperienceCard({ item, index }: { item: ExperienceItem; index: number }
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="border-t border-white/10 py-8 md:py-10"
+            className="border-t border-white/5 py-6 md:py-8"
         >
-            <div className="grid md:grid-cols-12 gap-6">
-                {/* Left: Time & Logo */}
-                <div className="md:col-span-3 space-y-4">
-                    <p className="font-mono text-xs tracking-widest text-muted-foreground">{item.period}</p>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="flex items-center gap-6">
                     {/* Logo */}
-                    <div className="w-16 h-16 border border-white/20 rounded flex items-center justify-center bg-white/5 overflow-hidden group">
+                    <div className="w-12 h-12 border border-white/10 rounded flex items-center justify-center bg-white/5 overflow-hidden min-w-[48px]">
                         {item.logo ? (
                             <img
                                 src={item.logo}
                                 alt={`${item.company} logo`}
-                                className="w-full h-full object-contain p-2 filter grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
+                                className="w-full h-full object-contain p-2 filter grayscale brightness-200"
                             />
                         ) : (
-                            <span className="font-mono text-[8px] text-muted-foreground text-center px-2 uppercase">{item.company.substring(0, 3)}</span>
+                            <span className="font-mono text-[8px] text-muted-foreground uppercase">{item.company.substring(0, 3)}</span>
                         )}
                     </div>
-                </div>
-
-                {/* Right: Content */}
-                <div className="md:col-span-9 space-y-4">
                     <div>
-                        <h3 className="font-sans text-xl md:text-2xl font-light tracking-tight mb-1">{item.title}</h3>
-                        <p className="font-mono text-sm text-muted-foreground tracking-wide">{item.company}</p>
+                        <h3 className="font-sans text-xl font-light tracking-tight">{item.title}</h3>
+                        <p className="font-mono text-xs text-muted-foreground tracking-wide">{item.company}</p>
                     </div>
-
-                    <ul className="space-y-2">
-                        {item.description.map((desc, i) => (
-                            <li key={i} className="font-sans text-sm md:text-base text-white/70 leading-relaxed flex gap-3">
-                                <span className="text-muted-foreground mt-1.5">—</span>
-                                <span>{desc}</span>
-                            </li>
-                        ))}
-                    </ul>
+                </div>
+                <div className="md:text-right">
+                    <p className="font-mono text-xs tracking-widest text-muted-foreground">{item.period}</p>
                 </div>
             </div>
         </motion.div>
@@ -138,63 +124,73 @@ function ExperienceCard({ item, index }: { item: ExperienceItem; index: number }
 
 export function TechExperience() {
     return (
-        <section className="relative py-32 px-8 md:px-12 bg-[#050505]">
-            {/* Current Roles */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="mb-12"
-            >
-                <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">PRESENT</p>
-                <h2 className="font-sans text-3xl md:text-5xl font-light italic">Current Roles</h2>
-            </motion.div>
+        <section className="relative py-24 px-8 md:px-12 bg-[#050505]">
+            <div className="max-w-5xl mx-auto">
+                {/* Current */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-10"
+                >
+                    <p className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground mb-4">LEADERSHIP</p>
+                    <h2 className="font-sans text-3xl md:text-4xl font-light italic">Current Roles</h2>
+                </motion.div>
 
-            <div className="max-w-5xl mb-24">
-                {currentRoles.map((item, index) => (
-                    <ExperienceCard key={index} item={item} index={index} />
-                ))}
+                <div className="mb-20">
+                    {currentRoles.map((item, index) => (
+                        <ExperienceCard key={index} item={item} index={index} />
+                    ))}
+                </div>
+
+                {/* Achievements */}
+                <div className="grid md:grid-cols-2 gap-12 mb-20">
+                    <div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="mb-8"
+                        >
+                            <p className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground mb-4">RECOGNITION</p>
+                            <h2 className="font-sans text-3xl md:text-4xl font-light italic">Achievements</h2>
+                        </motion.div>
+                        <div className="space-y-4">
+                            {achievements.map((item, index) => (
+                                <div key={index} className="flex gap-4 items-baseline border-b border-white/5 pb-4">
+                                    <span className="font-mono text-xs text-accent">{item.title}</span>
+                                    <span className="font-sans text-sm text-white/70">{item.event}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Past Experience merged */}
+                    <div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="mb-8"
+                        >
+                            <p className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground mb-4">EXPERIENCE</p>
+                            <h2 className="font-sans text-3xl md:text-4xl font-light italic">Previous</h2>
+                        </motion.div>
+                        <div className="space-y-4">
+                            {pastExperience.map((item, index) => (
+                                <div key={index} className="flex justify-between items-baseline border-b border-white/5 pb-4">
+                                    <div>
+                                        <p className="font-sans text-sm text-white/90">{item.title}</p>
+                                        <p className="font-mono text-[10px] text-muted-foreground">{item.company}</p>
+                                    </div>
+                                    <p className="font-mono text-[10px] text-muted-foreground whitespace-nowrap">{item.period.split(' – ')[0]}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            {/* Technical Experience */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="mb-12"
-            >
-                <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">ENGINEERING</p>
-                <h2 className="font-sans text-3xl md:text-5xl font-light italic">Technical Experience</h2>
-            </motion.div>
-
-            <div className="max-w-5xl mb-24">
-                {technicalExperience.map((item, index) => (
-                    <ExperienceCard key={index} item={item} index={index} />
-                ))}
-            </div>
-
-            {/* Campus Roles */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="mb-12"
-            >
-                <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">COMMUNITY</p>
-                <h2 className="font-sans text-3xl md:text-5xl font-light italic">Campus & Community Roles</h2>
-            </motion.div>
-
-            <div className="max-w-5xl">
-                {campusRoles.map((item, index) => (
-                    <ExperienceCard key={index} item={item} index={index} />
-                ))}
-            </div>
-
-            {/* Bottom Border */}
-            <div className="border-t border-white/10 mt-12" />
+            <div className="border-t border-white/5" />
         </section>
     )
 }

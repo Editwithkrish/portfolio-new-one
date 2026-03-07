@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Krishna Jha | Full-Stack Developer & Creative Media Producer",
-  description: "Co-Founder & COO at BaseBrain. Specialized in building high-performance web applications and cinematic creative content.",
+  title: "Krishna Jha | Co-Founder & COO at BuildShot",
+  description: "Co-Founder & COO at BuildShot. Scaling systems and leading operations from the ground up.",
   openGraph: {
-    title: "Krishna Jha | Portfolio",
-    description: "Full-Stack Developer & Creative Media Producer based in India.",
+    title: "Krishna Jha | BuildShot",
+    description: "Co-Founder & COO at BuildShot.",
     url: "https://krishnajha.vercel.app",
     siteName: "Krishna Jha Portfolio",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "/profile.png",
         width: 1200,
         height: 630,
-        alt: "Krishna Jha - Full-Stack Developer",
+        alt: "Krishna Jha - BuildShot COO",
       },
     ],
     locale: "en_US",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Krishna Jha | Portfolio",
-    description: "Full-Stack Developer & Creative Media Producer.",
+    title: "Krishna Jha | BuildShot",
+    description: "Co-Founder & COO at BuildShot.",
     images: ["/profile.png"],
   },
 }
