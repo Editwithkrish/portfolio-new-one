@@ -54,6 +54,7 @@ const pastExperience: ExperienceItem[] = [
         description: [
             "Worked on software development tasks in a production environment",
         ],
+        logo: "https://alexahire.com/images/alexa-hire-logo.jpg",
     },
     {
         title: "Freelancer",

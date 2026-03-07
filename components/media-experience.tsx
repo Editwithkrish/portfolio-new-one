@@ -8,6 +8,7 @@ interface MediaExperience {
     company: string
     period: string
     description: string[]
+    logo?: string
 }
 
 const mediaExperience: MediaExperience[] = [
@@ -19,6 +20,7 @@ const mediaExperience: MediaExperience[] = [
             "Edited performance-driven content for brands and agencies",
             "Focused on retention, pacing, and conversion-friendly storytelling",
         ],
+        logo: "https://adsharksmedia.com/wp-content/uploads/2024/02/website-client-logo-size-removebg-preview-1.png",
     },
     {
         title: "Assistant Video Editor",
@@ -28,6 +30,7 @@ const mediaExperience: MediaExperience[] = [
             "Edited esports and high-volume content",
             "Worked in a fast-paced, deadline-heavy production pipeline",
         ],
+        logo: "https://www.rooter.gg/images/rooter-logo-white.webp",
     },
     {
         title: "Video Editor",
@@ -37,6 +40,7 @@ const mediaExperience: MediaExperience[] = [
             "Long-term role editing educational and growth-focused content",
             "Built strong fundamentals in storytelling, motion, and pacing",
         ],
+        logo: "https://growitbuddy.com/wp-content/uploads/2023/09/Growitbuddy-Digital-Marketing-Agency-Logo1.webp",
     },
 ]
 
@@ -46,24 +50,28 @@ const pastWorks = [
         type: "YouTube Content Creator",
         projectCount: "15+ Videos",
         description: "Edited cinematic analysis and film critique content",
+        logo: "https://yt3.googleusercontent.com/J6DsMjHRKjTmNWjP4qcaI6stCsniYJUgj5K-jy2qSumNT3FhbIAjHhpbLr_ImAnaU85FPU805w=s900-c-k-c0x00ffffff-no-rj",
     },
     {
         client: "Prakhar Ke Pravachan",
         type: "YouTube Content Creator",
         projectCount: "20+ Videos",
         description: "Edited educational and commentary content focused on engagement",
+        logo: "https://yt3.googleusercontent.com/hwSmxY9VTk182w_IaiZb_tanNCFIaZXlePToJum6d1_ajGChKUIynvhXBwyo4Au23-2NfNLObw=s900-c-k-c0x00ffffff-no-rj",
     },
     {
         client: "Ad Sharks Media",
         type: "Marketing Agency",
         projectCount: "30+ Projects",
         description: "Performance marketing videos for various brands",
+        logo: "https://adsharksmedia.com/wp-content/uploads/2024/02/website-client-logo-size-removebg-preview-1.png",
     },
     {
         client: "Rooter.gg",
         type: "Esports Platform",
         projectCount: "100+ Edits",
         description: "High-volume gaming and esports content production",
+        logo: "https://www.rooter.gg/images/rooter-logo-white.webp",
     },
 ]
 
@@ -80,9 +88,17 @@ function MediaExperienceCard({ item, index }: { item: MediaExperience; index: nu
                 {/* Left: Time & Logo placeholder */}
                 <div className="md:col-span-3 space-y-4">
                     <p className="font-mono text-xs tracking-widest text-muted-foreground">{item.period}</p>
-                    {/* Logo Placeholder */}
-                    <div className="w-16 h-16 border border-white/20 rounded flex items-center justify-center bg-white/5">
-                        <span className="font-mono text-[8px] text-muted-foreground text-center px-2">LOGO</span>
+                    {/* Logo */}
+                    <div className="w-16 h-16 border border-white/20 rounded flex items-center justify-center bg-white/5 overflow-hidden group">
+                        {item.logo ? (
+                            <img
+                                src={item.logo}
+                                alt={`${item.company} logo`}
+                                className="w-full h-full object-contain p-2 filter grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
+                            />
+                        ) : (
+                            <span className="font-mono text-[8px] text-muted-foreground text-center px-2 uppercase">{item.company.substring(0, 3)}</span>
+                        )}
                     </div>
                 </div>
 
@@ -151,9 +167,17 @@ export function MediaExperience() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="border border-white/10 p-6 group hover:bg-white/5 transition-colors duration-300"
                         >
-                            {/* Logo Placeholder */}
-                            <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center bg-white/5 mb-4">
-                                <span className="font-mono text-[8px] text-muted-foreground">LOGO</span>
+                            {/* Logo */}
+                            <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center bg-white/5 mb-4 overflow-hidden">
+                                {work.logo ? (
+                                    <img
+                                        src={work.logo}
+                                        alt={`${work.client} logo`}
+                                        className="w-full h-full object-contain p-2 filter grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
+                                    />
+                                ) : (
+                                    <span className="font-mono text-[8px] text-muted-foreground">LOGO</span>
+                                )}
                             </div>
 
                             <h3 className="font-sans text-xl md:text-2xl font-light tracking-tight mb-1">{work.client}</h3>
