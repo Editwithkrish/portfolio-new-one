@@ -15,7 +15,7 @@ const mediaExperience: MediaExperience[] = [
     {
         title: "Freelance Video Editor",
         company: "Ad Sharks Media",
-        period: "Jul 2025 – Sep 2025",
+        period: "Jul 2025  Sep 2025",
         description: [
             "Edited performance-driven content for brands and agencies",
             "Focused on retention, pacing, and conversion-friendly storytelling",
@@ -25,7 +25,7 @@ const mediaExperience: MediaExperience[] = [
     {
         title: "Assistant Video Editor",
         company: "Rooter.gg",
-        period: "Feb 2025 – Jun 2025",
+        period: "Feb 2025  Jun 2025",
         description: [
             "Edited esports and high-volume content",
             "Worked in a fast-paced, deadline-heavy production pipeline",
@@ -35,7 +35,7 @@ const mediaExperience: MediaExperience[] = [
     {
         title: "Video Editor",
         company: "GrowitBuddy",
-        period: "Feb 2022 – Jul 2023",
+        period: "Feb 2022  Jul 2023",
         description: [
             "Long-term role editing educational and growth-focused content",
             "Built strong fundamentals in storytelling, motion, and pacing",
@@ -112,7 +112,7 @@ function MediaExperienceCard({ item, index }: { item: MediaExperience; index: nu
                     <ul className="space-y-2">
                         {item.description.map((desc, i) => (
                             <li key={i} className="font-sans text-sm md:text-base text-white/70 leading-relaxed flex gap-3">
-                                <span className="text-muted-foreground mt-1.5">—</span>
+                                <span className="text-muted-foreground mt-1.5"></span>
                                 <span>{desc}</span>
                             </li>
                         ))}
@@ -229,3 +229,4 @@ export function MediaExperience() {
         </section>
     )
 }
+

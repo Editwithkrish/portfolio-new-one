@@ -15,7 +15,7 @@ const currentRoles: ExperienceItem[] = [
     {
         title: "Co-Founder & COO",
         company: "BuildShot",
-        period: "Jul 2025 – Present",
+        period: "Jul 2025  Present",
         description: [
             "Leading operations, execution strategy, and internal systems",
             "Working closely with product & tech teams to ship fast and scale efficiently",
@@ -26,7 +26,7 @@ const currentRoles: ExperienceItem[] = [
     {
         title: "Social Media Lead",
         company: "Cloud Computing Club, MIT ADT University",
-        period: "Jul 2025 – Present",
+        period: "Jul 2025  Present",
         description: [
             "Managing content strategy, branding, and digital presence",
             "Driving engagement through technical + educational content",
@@ -37,7 +37,7 @@ const currentRoles: ExperienceItem[] = [
     {
         title: "Social Media Lead",
         company: "Innovation & Entrepreneurship Club, MIT ADT",
-        period: "Aug 2025 – Present",
+        period: "Aug 2025  Present",
         description: [
             "Building the club's online identity and startup-focused content",
             "Promoting events, initiatives, and founder stories",
@@ -50,7 +50,7 @@ const pastExperience: ExperienceItem[] = [
     {
         title: "SDE Intern",
         company: "Alexa Hire",
-        period: "Sep 2025 – Oct 2025",
+        period: "Sep 2025  Oct 2025",
         description: [
             "Worked on software development tasks in a production environment",
         ],
@@ -59,7 +59,7 @@ const pastExperience: ExperienceItem[] = [
     {
         title: "Freelancer",
         company: "Independent",
-        period: "Jun 2022 – Present",
+        period: "Jun 2022  Present",
         description: [
             "Built full-stack web applications for clients using Next.js, MongoDB, MERN",
             "Delivered end-to-end solutions from design to deployment",
@@ -68,7 +68,7 @@ const pastExperience: ExperienceItem[] = [
     {
         title: "Social Media Lead",
         company: "Innovation & Entrepreneurship Club, MIT ADT",
-        period: "Aug 2024 – Present",
+        period: "Aug 2024  Present",
         description: [
             "Managing content strategy and building the club's online identity",
         ],
@@ -184,7 +184,7 @@ export function TechExperience() {
                                         <p className="font-sans text-sm text-white/90">{item.title}</p>
                                         <p className="font-mono text-[10px] text-muted-foreground">{item.company}</p>
                                     </div>
-                                    <p className="font-mono text-[10px] text-muted-foreground whitespace-nowrap">{item.period.split(' – ')[0]}</p>
+                                    <p className="font-mono text-[10px] text-muted-foreground whitespace-nowrap">{item.period.split('  ')[0]}</p>
                                 </div>
                             ))}
                         </div>
@@ -195,3 +195,4 @@ export function TechExperience() {
         </section>
     )
 }
+

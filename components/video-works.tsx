@@ -3,6 +3,7 @@
 import { useState, useRef } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 import Image from "next/image"
+import SplitText from "./ui/SplitText"
 
 const videoWorks = [
     {
@@ -69,9 +70,15 @@ export function VideoWorks() {
             >
                 <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">CLIENT WORK</p>
                 <h2 className="font-sans text-3xl md:text-5xl font-light italic">My Past Work</h2>
-                <p className="font-sans text-base text-white/60 mt-4 max-w-2xl">
-                    Video editing projects across creators, agencies, and esports platforms
-                </p>
+                <div className="mt-4 max-w-2xl">
+                    <SplitText
+                        text="Video editing projects across creators, agencies, and esports platforms"
+                        className="font-sans text-base text-white/60"
+                        delay={30}
+                        duration={0.8}
+                        textAlign="left"
+                    />
+                </div>
             </motion.div>
 
             {/* Video Works List */}
@@ -108,9 +115,15 @@ export function VideoWorks() {
                                 >
                                     {work.title}
                                 </motion.h3>
-                                <p className="font-mono text-xs text-muted-foreground tracking-wide mt-2">
-                                    {work.client} • {work.type}
-                                </p>
+                                <div className="mt-2">
+                                    <SplitText
+                                        text={`${work.client}  ${work.type}`}
+                                        className="font-mono text-xs text-muted-foreground tracking-wide"
+                                        delay={20}
+                                        duration={0.6}
+                                        textAlign="left"
+                                    />
+                                </div>
                             </div>
 
                             {/* Count Badge */}
@@ -174,3 +187,4 @@ export function VideoWorks() {
         </section>
     )
 }
+

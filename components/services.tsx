@@ -14,7 +14,6 @@ const services = [
             "API integration",
             "Database design",
         ],
-        icon: "⚡",
     },
     {
         title: "Video Editing & Production",
@@ -26,7 +25,6 @@ const services = [
             "Esports content",
             "Color grading & sound design",
         ],
-        icon: "🎬",
     },
     {
         title: "UI/UX Design",
@@ -38,7 +36,6 @@ const services = [
             "Prototyping",
             "User research",
         ],
-        icon: "🎨",
     },
     {
         title: "Content Strategy & Growth",
@@ -50,7 +47,6 @@ const services = [
             "Community building",
             "Analytics & optimization",
         ],
-        icon: "📈",
     },
 ]
 
@@ -85,7 +81,6 @@ export function Services() {
                         onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                     >
                         <div className="flex items-start gap-4 mb-4">
-                            <span className="text-4xl">{service.icon}</span>
                             <div className="flex-1">
                                 <h3 className="font-sans text-2xl font-light tracking-tight mb-2 group-hover:text-white transition-colors">
                                     {service.title}
